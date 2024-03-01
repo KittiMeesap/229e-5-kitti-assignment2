@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveRB : MonoBehaviour
 {
+    public float moveSpeed = 5f;
     private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -17,17 +18,17 @@ public class MoveRB : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.AddForce(transform.right);
+            rb.AddForce(Vector3.forward * moveSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            rb.AddForce(-transform.right);
+            rb.AddForce(Vector3.left * moveSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            rb.AddForce(transform.right);
+            rb.AddForce(Vector3.right * moveSpeed);
         }
     }
 }
